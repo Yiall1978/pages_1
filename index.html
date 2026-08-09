@@ -3,332 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presidency of the Republic of Chile</title>
+    <title>Mers Casino | Premium Online Gaming</title>
     <style>
         /* --- CSS Reset & Variables --- */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
         :root {
-            --chile-blue: #0033a0;
-            --chile-red: #da291c;
-            --text-dark: #2c3e50;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --gold-primary: #d4af37;
+            --gold-hover: #f3e5ab;
             --text-light: #ffffff;
-            --bg-light: #f8f9fa;
+            --text-muted: #aaaaaa;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
         }
 
         /* --- Header & Navigation --- */
         header {
-            background-color: var(--chile-blue);
-            color: var(--text-light);
-            padding: 1rem 5%;
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
         }
 
-        /* Simulating the Coat of Arms shape */
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--chile-blue) 50%, var(--chile-red) 50%);
-            border: 2px solid white;
-            border-radius: 5px;
+        .logo span {
+            color: var(--text-light);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 30px;
+            align-items: center;
         }
 
         nav a {
             color: var(--text-light);
             text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
             font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #ffd700; /* Gold hover effect */
+            color: var(--gold-primary);
+        }
+
+        .btn-auth {
+            border: 1px solid var(--gold-primary);
+            padding: 8px 20px;
+            border-radius: 4px;
+            color: var(--gold-primary);
+        }
+
+        .btn-auth.signup {
+            background-color: var(--gold-primary);
+            color: var(--bg-dark);
+        }
+
+        .btn-auth:hover {
+            background-color: var(--gold-hover);
+            color: var(--bg-dark);
+            border-color: var(--gold-hover);
         }
 
         /* --- Hero Section --- */
         .hero {
-            /* Using a placeholder image of Santiago/La Moneda */
-            background: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1596700735741-9fb93d1544a4?auto=format&fit=crop&q=80&w=1920') center/cover;
-            height: 70vh;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 1)), 
+                        url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&q=80&w=1920') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--text-light);
             padding: 0 20px;
-            border-bottom: 6px solid var(--chile-red);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            color: var(--gold-primary);
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
         }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
+            max-width: 600px;
             margin-bottom: 2rem;
+            color: var(--text-muted);
         }
 
-        /* --- Main Content & Sections --- */
-        section {
+        .btn-play {
+            background-color: var(--gold-primary);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-play:hover {
+            background-color: var(--gold-hover);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- Games Section --- */
+        .games-section {
             padding: 5rem 5%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            color: var(--chile-blue);
+            font-size: 2.5rem;
             margin-bottom: 3rem;
-            position: relative;
+            color: var(--text-light);
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--chile-red);
-            margin: 10px auto 0;
+        .section-title span {
+            color: var(--gold-primary);
         }
 
-        /* --- News Grid --- */
-        .news-grid {
+        .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .card {
-            background: #fff;
-            border-radius: 8px;
+        .game-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
         }
 
-        .card:hover {
+        .game-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--gold-primary);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
-        .card-img {
-            height: 220px;
-            background-color: #e0e0e0;
+        .game-img {
+            height: 200px;
             background-size: cover;
             background-position: center;
+            transition: transform 0.5s ease;
         }
 
-        .img-1 { background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800'); }
-        .img-2 { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800'); }
-        .img-3 { background-image: url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=800'); }
-
-        .card-content {
-            padding: 1.8rem;
+        .game-card:hover .game-img {
+            transform: scale(1.1);
         }
 
-        .date {
-            font-size: 0.85rem;
-            color: #7f8c8d;
-            font-weight: 600;
+        .img-slots { background-image: url('https://images.unsplash.com/photo-1594968973184-9040a5a79963?auto=format&fit=crop&q=80&w=600'); }
+        .img-roulette { background-image: url('https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&q=80&w=600'); }
+        .img-blackjack { background-image: url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&q=80&w=600'); }
+        .img-live { background-image: url('https://images.unsplash.com/photo-1571330735066-03aaa9429d89?auto=format&fit=crop&q=80&w=600'); }
+
+        .game-info {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(to top, var(--bg-card) 70%, transparent);
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            display: block;
         }
 
-        .card-content h3 {
-            margin-bottom: 15px;
-            color: var(--chile-blue);
-            font-size: 1.3rem;
+        .game-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .card-content p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+        /* --- VIP Banner --- */
+        .vip-banner {
+            margin: 4rem 5%;
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid var(--gold-primary);
+            border-radius: 10px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.1);
         }
 
-        .btn-read {
-            display: inline-block;
-            background: transparent;
-            color: var(--chile-red);
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid var(--chile-red);
-            padding: 8px 20px;
-            border-radius: 4px;
-            transition: all 0.3s;
+        .vip-banner h2 {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
         }
 
-        .btn-read:hover {
-            background: var(--chile-red);
-            color: #fff;
+        .vip-banner p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--text-muted);
         }
 
         /* --- Footer --- */
         footer {
-            background-color: #1a252f;
-            color: #bdc3c7;
+            background-color: #050505;
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid #222;
             text-align: center;
-            padding: 3rem 5%;
         }
 
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 3rem;
+            text-align: left;
         }
 
-        footer h4 {
-            color: #fff;
-            margin-bottom: 10px;
+        .footer-col h4 {
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
             font-size: 1.2rem;
         }
 
-        .footer-links {
-            margin: 20px 0;
+        .footer-col ul {
+            list-style: none;
         }
 
-        .footer-links a {
-            color: #bdc3c7;
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
             text-decoration: none;
-            margin: 0 10px;
+            transition: color 0.3s;
         }
 
-        .footer-links a:hover {
+        .footer-col ul li a:hover {
             color: var(--text-light);
-            text-decoration: underline;
         }
 
-        /* Responsive Design */
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .warning {
+            display: inline-block;
+            border: 1px solid #ff4444;
+            color: #ff4444;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 gap: 15px;
+                padding: 1rem;
             }
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <div class="logo-icon"></div>
-            Government of Chile
-        </div>
+        <a href="#" class="logo">Mers <span>Casino</span></a>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">The President</a></li>
-                <li><a href="#">Press Room</a></li>
-                <li><a href="#">Government</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Promotions</a></li>
+                <li><a href="#">VIP Club</a></li>
+                <li><a href="#" class="btn-auth">Log In</a></li>
+                <li><a href="#" class="btn-auth signup">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Presidency of the Republic</h1>
-        <p>Working together for a fairer, greener, and more decentralized Chile. Welcome to the official portal of the Government.</p>
+        <h1>Experience the Thrill</h1>
+        <p>Join Mers Casino today and get a 100% Welcome Bonus up to $1,000 + 200 Free Spins on your first deposit.</p>
+        <a href="#" class="btn-play">Play Now</a>
     </div>
 
-    <!-- Latest News Section -->
-    <main>
-        <section>
-            <h2 class="section-title">Latest Updates</h2>
-            
-            <div class="news-grid">
-                <!-- News Item 1 -->
-                <div class="card">
-                    <div class="card-img img-1"></div>
-                    <div class="card-content">
-                        <span class="date">August 9, 2026</span>
-                        <h3>President announces new national public transport initiative</h3>
-                        <p>The new strategy aims to reduce carbon emissions across all regions and improve connectivity for rural communities.</p>
-                        <a href="#" class="btn-read">Read More</a>
-                    </div>
-                </div>
-
-                <!-- News Item 2 -->
-                <div class="card">
-                    <div class="card-img img-2"></div>
-                    <div class="card-content">
-                        <span class="date">August 8, 2026</span>
-                        <h3>Bilateral meeting with international leaders</h3>
-                        <p>Discussions focused on trade, environmental protection, and strengthening diplomatic ties in the Latin American region.</p>
-                        <a href="#" class="btn-read">Read More</a>
-                    </div>
-                </div>
-
-                <!-- News Item 3 -->
-                <div class="card">
-                    <div class="card-img img-3"></div>
-                    <div class="card-content">
-                        <span class="date">August 6, 2026</span>
-                        <h3>New Investment in Public Education</h3>
-                        <p>The government has allocated new funds to modernize infrastructure and technology in public schools nationwide.</p>
-                        <a href="#" class="btn-read">Read More</a>
-                    </div>
+    <!-- Featured Games -->
+    <section class="games-section">
+        <h2 class="section-title">Popular <span>Games</span></h2>
+        
+        <div class="games-grid">
+            <!-- Game 1 -->
+            <div class="game-card">
+                <div class="game-img img-slots"></div>
+                <div class="game-info">
+                    <h3>Premium Slots</h3>
+                    <p>Over 1,000+ high-RTP slot games.</p>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <!-- Game 2 -->
+            <div class="game-card">
+                <div class="game-img img-roulette"></div>
+                <div class="game-info">
+                    <h3>Roulette Pro</h3>
+                    <p>European, American, and French tables.</p>
+                </div>
+            </div>
+
+            <!-- Game 3 -->
+            <div class="game-card">
+                <div class="game-img img-blackjack"></div>
+                <div class="game-info">
+                    <h3>Classic Blackjack</h3>
+                    <p>Beat the dealer in our classic card rooms.</p>
+                </div>
+            </div>
+
+            <!-- Game 4 -->
+            <div class="game-card">
+                <div class="game-img img-live"></div>
+                <div class="game-info">
+                    <h3>Live Dealer</h3>
+                    <p>Real-time action with professional dealers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Banner -->
+    <section class="vip-banner">
+        <h2>Mers Exclusive VIP Club</h2>
+        <p>Unlock luxury rewards, dedicated account managers, faster withdrawals, and invitations to exclusive global events.</p>
+        <a href="#" class="btn-play">Learn More</a>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <h4>Presidency of the Republic of Chile</h4>
-            <p>Palacio de La Moneda, Santiago, Chile.</p>
-            <div class="footer-links">
-                <a href="#">Transparency</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Site Map</a>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Casino Links</h4>
+                <ul>
+                    <li><a href="#">All Games</a></li>
+                    <li><a href="#">Jackpots</a></li>
+                    <li><a href="#">Tournaments</a></li>
+                    <li><a href="#">Payment Methods</a></li>
+                </ul>
             </div>
-            <p>&copy; 2026 Government of Chile. All rights reserved.</p>
+            <div class="footer-col">
+                <h4>Help & Support</h4>
+                <ul>
+                    <li><a href="#">24/7 Live Chat</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Responsible Gaming</a></li>
+                    <li><a href="#">Fair Play Guarantee</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="warning">18+ Play Responsibly</div>
+            <p>Gambling can be addictive. Please play responsibly. Mers Casino is licensed and regulated by the Global Gaming Commission.</p>
+            <p style="margin-top: 10px;">&copy; 2026 Mers Casino. All rights reserved.</p>
         </div>
     </footer>
 
